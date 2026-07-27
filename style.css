@@ -441,12 +441,13 @@ padding:20px;
 }
 
 .guide-scroll{
-width:85%;
-max-width:500px;
+width:58%;
+max-width:260px;
+margin:auto;
 text-align:center;
-font-size:22px;
-line-height:2;
-padding:150px 50px 70px;
+font-size:18px;
+line-height:1.5;
+padding-top:150px;
 box-sizing:border-box;
 }
 

@@ -523,7 +523,13 @@ background:#4CAF50;
 color:white;
 cursor:pointer;
 }
-
+.guide-scroll{
+    width:320px;
+    text-align:center;
+    padding:60px 55px 50px !important;
+    box-sizing:border-box;
+    margin:auto;
+}
 .guide-scroll{
 position:relative;
 z-index:1;

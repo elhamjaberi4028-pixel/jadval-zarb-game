@@ -478,7 +478,10 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:url("images/guide-bg.png") center/120% auto no-repeat;
+background-image:url("images/guide-bg.png");
+background-size:130% auto;
+background-position:center;
+background-repeat:no-repeat;
 padding:20px;
 }
 

@@ -471,13 +471,13 @@ color:white;
 cursor:pointer;
 margin-top:20px;
 }
-.guide-page{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:url("images/guide-bg.png") center/cover no-repeat;
-padding:20px;
+.guide-scroll{
+width:70%;
+max-width:380px;
+text-align:center;
+padding:110px 20px 50px;
+box-sizing:border-box;
+margin:auto;
 }
 
 .guide-scroll{

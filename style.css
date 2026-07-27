@@ -436,7 +436,7 @@ background-size:contain;
 
 background-repeat:no-repeat;
 
-background-size:cover;
+background-size:120% auto;
 padding:20px;
 }
 

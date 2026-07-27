@@ -432,7 +432,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 background-image:url("images/guide-bg.png");
-background-size:120% auto;
+background-size:contain;
 
 background-repeat:no-repeat;
 

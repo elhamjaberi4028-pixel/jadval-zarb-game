@@ -284,8 +284,7 @@ backdrop-filter:blur(6px);
 
 .animal{
     border-radius:15px;
-    background:#fff8dc;
-    box-shadow:0 3px 8px rgba(0,0,0,0.2);
+  
 }
 @keyframes animalOpen{
 

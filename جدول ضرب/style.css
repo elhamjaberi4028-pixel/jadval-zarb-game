@@ -214,13 +214,11 @@ margin-bottom:25px;
 
 .animal{
 height:90px;
-background:white;
 border-radius:15px;
 display:flex;
 justify-content:center;
 align-items:center;
 font-size:38px;
-box-shadow:0 3px 8px rgba(0,0,0,.2);
 transition:.3s;
 }
 

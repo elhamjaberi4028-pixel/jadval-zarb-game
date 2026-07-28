@@ -225,7 +225,7 @@ transition:.3s;
 }
 
 .animal.open{
-background:#FFF8DC;
+background:transparent;
 transform:scale(1.05);
 }
 

@@ -194,7 +194,7 @@ else if(goldMedals == 2){
 message="🥇 عالی! دومین مدال طلای قهرمانی را گرفتی.<br>یک مدال دیگر تا دریافت لوح تقدیر باقی مانده است.";
 
 }
-else if(goldMedals >= 3){
+else if(goldMedals >= 5){
 
 hasCertificate=true;
 

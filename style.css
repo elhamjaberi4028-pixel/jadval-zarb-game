@@ -534,24 +534,4 @@ color:#4a2d16;
     margin-top:20px;
 }
 
-.guide-scroll button{
-margin-top:25px;
-padding:12px 30px;
-font-size:20px;
-border:none;
-border-radius:15px;
-background:#4CAF50;
-color:white;
-cursor:pointer;
-}
-.guide-scroll{
-    width:320px;
-    text-align:center;
-    padding:60px 55px 50px !important;
-    box-sizing:border-box;
-    margin:auto;
-}
-.guide-scroll{
-position:relative;
-z-index:1;
-}
+

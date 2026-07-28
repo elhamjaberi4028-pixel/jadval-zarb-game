@@ -215,15 +215,6 @@ localStorage.setItem("certificate_name", playerName);
 message="🏆 فوق‌العاده! پنج مدال طلای قهرمانی گرفتی و لوح تقدیر دریافت کردی.";
 
 }
-else if(goldMedals >= 5){
-
-hasCertificate=true;
-
-localStorage.setItem(playerName + "_certificate","yes");
-
-message="🏆 فوق‌العاده! سه مدال طلای قهرمانی گرفتی و لوح تقدیر دریافت کردی.";
-
-}
 
 }
 else if(score>=14){

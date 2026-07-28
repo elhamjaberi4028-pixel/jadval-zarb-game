@@ -533,5 +533,15 @@ color:#4a2d16;
 .guide-page button{
     margin-top:20px;
 }
+.animal{
+    height:70px;
+}
 
+.animal img{
+    max-height:45px;
+}
+
+.animals{
+    gap:8px;
+}
 

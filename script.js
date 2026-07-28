@@ -191,7 +191,28 @@ message="🥇 تبریک! مدال طلای قهرمانی را گرفتی.<br>�
 }
 else if(goldMedals == 2){
 
-message="🥇 عالی! دومین مدال طلای قهرمانی را گرفتی.<br>یک مدال دیگر تا دریافت لوح تقدیر باقی مانده است.";
+message="🥇 عالی! دومین مدال طلای قهرمانی را گرفتی.<br>سه مدال دیگر تا دریافت لوح تقدیر باقی مانده است.";
+
+}
+else if(goldMedals == 3){
+
+message="🥇 عالی! سومین مدال طلای قهرمانی را گرفتی.<br>دو مدال دیگر تا دریافت لوح تقدیر باقی مانده است.";
+
+}
+else if(goldMedals == 4){
+
+message="🥇 فوق‌العاده! چهارمین مدال طلای قهرمانی را گرفتی.<br>یک مدال دیگر تا دریافت لوح تقدیر باقی مانده است.";
+
+}
+else if(goldMedals >= 5){
+
+hasCertificate=true;
+
+localStorage.setItem(playerName + "_certificate","yes");
+
+localStorage.setItem("certificate_name", playerName);
+
+message="🏆 فوق‌العاده! پنج مدال طلای قهرمانی گرفتی و لوح تقدیر دریافت کردی.";
 
 }
 else if(goldMedals >= 5){

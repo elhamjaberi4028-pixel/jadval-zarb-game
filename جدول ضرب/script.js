@@ -186,8 +186,7 @@ localStorage.setItem(playerName + "_gold", goldMedals);
 
 if(goldMedals == 1){
 
-message="🥇 تبریک! مدال طلای قهرمانی را گرفتی.<br>دو مدال دیگر تا دریافت لوح تقدیر باقی مانده است.";
-
+message="🥇 تبریک! مدال طلای قهرمانی را گرفتی.<br>چهار مدال دیگر تا دریافت لوح تقدیر باقی مانده است.";
 }
 else if(goldMedals == 2){
 

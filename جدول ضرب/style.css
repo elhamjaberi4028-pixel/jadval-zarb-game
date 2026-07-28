@@ -489,3 +489,14 @@ color:white;
 cursor:pointer;
 
 }
+.animal{
+    height:70px;
+}
+
+.animal img{
+    max-height:45px;
+}
+
+.animals{
+    gap:8px;
+}

@@ -19,14 +19,15 @@ body{
 
 .start{
 
-width:420px;
+width:92%;
+max-width:420px;
 
-margin:80px auto;
+margin:30px auto;
 
 background:rgba(255,255,255,0.88);
 backdrop-filter:blur(6px);
 
-padding:40px;
+padding:25px;
 
 border-radius:20px;
 

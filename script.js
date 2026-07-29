@@ -33,7 +33,8 @@ const applauseSound = new Audio("sounds/applause.mp3");
 const wrongSound = new Audio("sounds/wrong.mp3");
 const winSound = new Audio("sounds/win.mp3");
 
-const backgroundMusic = new Audio("sounds/background.mp3");
+const backgroundMusic = new Audio();
+backgroundMusic.src = "sounds/background.mp3";
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.15;
 

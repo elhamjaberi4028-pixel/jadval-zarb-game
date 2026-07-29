@@ -485,3 +485,25 @@ function saveCertificate(){
 window.open("certificate.html","_blank");
 
 }
+function toggleMusic(){
+
+musicOn = !musicOn;
+
+if(musicOn){
+
+backgroundMusic.play();
+
+}else{
+
+backgroundMusic.pause();
+
+}
+
+}
+
+
+function toggleEffects(){
+
+effectsOn = !effectsOn;
+
+}

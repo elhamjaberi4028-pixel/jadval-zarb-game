@@ -158,6 +158,9 @@ score=0;
 currentQuestion=0;
 
 createQuestions();
+
+backgroundMusic.play();
+
 showQuestion();
 
 }

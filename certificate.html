@@ -61,11 +61,29 @@ letter-spacing:1px;
 
 </div>
 
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 <script>
 
 let name = localStorage.getItem("certificate_name");
 
 document.getElementById("studentName").textContent = name || "";
+
+function downloadCertificate(){
+
+html2canvas(document.querySelector(".certificate")).then(function(canvas){
+
+let link=document.createElement("a");
+
+link.download="لوح تقدیر.png";
+
+link.href=canvas.toDataURL("image/png");
+
+link.click();
+
+});
+
+}
 
 </script>
 

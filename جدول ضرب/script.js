@@ -4,6 +4,8 @@ let currentQuestion = 0;
 let questions = [];
 let goldMedals = 0;
 let hasCertificate = false;
+let musicOn = true;
+let effectsOn = true;
 let fullScores = 0;
 
 let animals = [
@@ -41,7 +43,6 @@ backgroundMusic.volume = 0.15;
 applauseSound.volume = 0.3;
 wrongSound.volume = 0.3;
 winSound.volume = 0.3;
-
 
 
 function showMessage(text,type){
@@ -167,6 +168,7 @@ backgroundMusic.play().catch(function(error){
 });
 
 showQuestion();
+
 }
 function createQuestions(){
 questions=[];
@@ -226,6 +228,7 @@ localStorage.setItem("certificate_name", playerName);
 message="🏆 فوق‌العاده! پنج مدال طلای قهرمانی گرفتی و لوح تقدیر دریافت کردی.";
 
 }
+
 
 }
 else if(score>=14){
@@ -303,8 +306,12 @@ ${hasCertificate ? `
 `;
 
 
-winSound.currentTime=0;
+if(effectsOn){
+
+winSound.currentTime = 0;
 winSound.play();
+
+}
 
 celebration();
 
@@ -373,8 +380,11 @@ document.getElementById("app").innerHTML=`
 
 <div>📖 ${currentQuestion+1} / 20</div>
 
-</div>
+<button onclick="toggleMusic()">🎵</button>
 
+<button onclick="toggleEffects()">🔊</button>
+
+</div>
 
 
 <div class="progress">
@@ -456,8 +466,12 @@ showMessage(words[Math.floor(Math.random()*words.length)],"correct");
 
 clicked.style.background="#4CAF50";
 
+if(effectsOn){
+
 applauseSound.currentTime = 0;
 applauseSound.play();
+
+}
 
 }else{
 
@@ -465,8 +479,12 @@ clicked.style.background="#F44336";
 
 showMessage("اشتباه بود! دوباره تلاش کن ❌","wrong");
 
+if(effectsOn){
+
 wrongSound.currentTime = 0;
 wrongSound.play();
+
+}
 
 }
 

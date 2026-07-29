@@ -4,6 +4,8 @@ let currentQuestion = 0;
 let questions = [];
 let goldMedals = 0;
 let hasCertificate = false;
+let musicOn = true;
+let effectsOn = true;
 let fullScores = 0;
 
 let animals = [
@@ -304,8 +306,12 @@ ${hasCertificate ? `
 `;
 
 
-winSound.currentTime=0;
+if(effectsOn){
+
+winSound.currentTime = 0;
 winSound.play();
+
+}
 
 celebration();
 
@@ -374,8 +380,11 @@ document.getElementById("app").innerHTML=`
 
 <div>📖 ${currentQuestion+1} / 20</div>
 
-</div>
+<button onclick="toggleMusic()">🎵</button>
 
+<button onclick="toggleEffects()">🔊</button>
+
+</div>
 
 
 <div class="progress">
@@ -457,8 +466,12 @@ showMessage(words[Math.floor(Math.random()*words.length)],"correct");
 
 clicked.style.background="#4CAF50";
 
+if(effectsOn){
+
 applauseSound.currentTime = 0;
 applauseSound.play();
+
+}
 
 }else{
 
@@ -466,8 +479,12 @@ clicked.style.background="#F44336";
 
 showMessage("اشتباه بود! دوباره تلاش کن ❌","wrong");
 
+if(effectsOn){
+
 wrongSound.currentTime = 0;
 wrongSound.play();
+
+}
 
 }
 

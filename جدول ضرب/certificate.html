@@ -57,6 +57,8 @@ color:white;
 border:none;
 border-radius:12px;
 cursor:pointer;
+display:inline-block;
+font-family:tahoma;
 }
 
 </style>
@@ -79,7 +81,7 @@ cursor:pointer;
 📥 دانلود لوح تقدیر
 </button>
 
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3.3.0/dist/dom-to-image-more.min.js"></script>
 
 <script>
 
@@ -89,24 +91,31 @@ document.getElementById("studentName").textContent = name || "";
 
 function downloadCertificate(){
 
-html2canvas(document.getElementById("certificate"),{
-scale:2
-}).then(function(canvas){
+domtoimage.toPng(document.getElementById("certificate"),{
+quality:1,
+bgcolor:"#ffffff"
+})
+.then(function(dataUrl){
 
 let link=document.createElement("a");
 
-link.download="لوح-تقدیر-"+name+".png";
+link.download="لوح-تقدیر-"+(name || "دانش‌آموز")+".png";
 
-link.href=canvas.toDataURL("image/png");
+link.href=dataUrl;
 
 link.click();
+
+})
+.catch(function(error){
+
+alert("خطا در ذخیره لوح");
+
+console.error(error);
 
 });
 
 }
 
 </script>
-
 </body>
-
 </html>

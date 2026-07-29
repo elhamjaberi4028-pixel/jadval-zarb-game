@@ -380,9 +380,13 @@ document.getElementById("app").innerHTML=`
 
 <div>📖 ${currentQuestion+1} / 20</div>
 
-<button onclick="toggleMusic()">🎵</button>
+<button onclick="toggleMusic()">
+${musicOn ? "🎵" : "<span style='text-decoration:line-through'>🎵</span>"}
+</button>
 
-<button onclick="toggleEffects()">🔊</button>
+<button onclick="toggleEffects()">
+${effectsOn ? "🔊" : "<span style='text-decoration:line-through'>🔊</span>"}
+</button>
 
 </div>
 

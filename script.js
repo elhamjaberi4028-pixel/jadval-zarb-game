@@ -159,7 +159,10 @@ currentQuestion=0;
 
 createQuestions();
 
-backgroundMusic.play();
+backgroundMusic.currentTime = 0;
+backgroundMusic.play().catch(function(error){
+    console.log("پخش موزیک متوقف شد:", error);
+});
 
 showQuestion();
 

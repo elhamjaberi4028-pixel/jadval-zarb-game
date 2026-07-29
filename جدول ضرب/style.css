@@ -536,3 +536,43 @@ cursor:pointer;
     max-width:300px;
     margin:8px auto;
 }
+.name-title{
+    display:block;
+    font-size:22px;
+    font-weight:bold;
+    color:#4CAF50;
+    margin:15px 0 10px;
+}
+
+.sound-buttons{
+    display:flex;
+    justify-content:flex-start;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.sound-buttons button{
+    width:50px;
+    height:50px;
+    padding:0;
+    border-radius:50%;
+    font-size:24px;
+}
+
+.animals-row{
+    margin-top:18px;
+    font-size:32px;
+    letter-spacing:5px;
+}
+
+.designer{
+    margin-top:18px;
+    color:#555;
+    font-size:15px;
+    line-height:1.6;
+}
+
+.designer strong{
+    color:#2E7D32;
+    font-size:17px;
+}

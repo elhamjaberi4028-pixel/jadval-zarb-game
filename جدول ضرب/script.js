@@ -32,6 +32,11 @@ let animals = [
 const applauseSound = new Audio("sounds/applause.mp3");
 const wrongSound = new Audio("sounds/wrong.mp3");
 const winSound = new Audio("sounds/win.mp3");
+
+const backgroundMusic = new Audio("sounds/background.mp3");
+backgroundMusic.loop = true;
+backgroundMusic.volume = 0.15;
+
 applauseSound.volume = 0.3;
 wrongSound.volume = 0.3;
 winSound.volume = 0.3;

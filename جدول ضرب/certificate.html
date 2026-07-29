@@ -9,7 +9,7 @@
 
 body{
 margin:0;
-padding:0;
+padding:20px;
 background:white;
 text-align:center;
 font-family:tahoma;
@@ -48,19 +48,36 @@ text-shadow:
 letter-spacing:1px;
 }
 
+.download-btn{
+margin-top:20px;
+padding:12px 30px;
+font-size:22px;
+background:#4CAF50;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="certificate">
+<div class="certificate" id="certificate">
 
 <img src="images/certificate-new.png" class="certificate-bg" alt="لوح تقدیر">
 
 <div class="name" id="studentName"></div>
 
 </div>
+
+<br>
+
+<button class="download-btn" onclick="downloadCertificate()">
+📥 دانلود لوح تقدیر
+</button>
 
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
@@ -72,11 +89,13 @@ document.getElementById("studentName").textContent = name || "";
 
 function downloadCertificate(){
 
-html2canvas(document.querySelector(".certificate")).then(function(canvas){
+html2canvas(document.getElementById("certificate"),{
+scale:2
+}).then(function(canvas){
 
 let link=document.createElement("a");
 
-link.download="لوح تقدیر.png";
+link.download="لوح-تقدیر-"+name+".png";
 
 link.href=canvas.toDataURL("image/png");
 

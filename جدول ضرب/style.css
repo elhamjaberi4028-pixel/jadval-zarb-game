@@ -497,3 +497,41 @@ cursor:pointer;
 .animals{
     gap:8px;
 }
+.result{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+.result h1{
+    font-size:32px;
+}
+
+.result h2{
+    font-size:24px;
+}
+
+.result p{
+    font-size:20px !important;
+}
+
+.end-zoo{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+.end-animal{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+}
+
+.result button{
+    width:90%;
+    max-width:300px;
+    margin:8px auto;
+}

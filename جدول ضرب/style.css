@@ -9,11 +9,12 @@ body{
     margin:0;
     padding:0;
     background-image:url("images/zoo-bg.png");
-    background-size:contain;
+    background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-    background-attachment:fixed;
+    background-attachment:scroll;
     font-family:tahoma;
+    min-height:100vh;
 }
 
 .start{
@@ -27,7 +28,6 @@ body{
     text-align:center;
     box-shadow:0 0 20px rgba(0,0,0,.2);
 }
-
 h1{
 
 color:#ff6600;
@@ -75,6 +75,7 @@ width:90%;
 max-width:260px;
 
 }
+
 button:hover{
 
 background:#2e7d32;
@@ -230,7 +231,6 @@ transition:.3s;
 background:transparent;
 transform:scale(1.05);
 }
-
 .animal.lock{
 background:#E0E0E0;
 }
@@ -259,8 +259,8 @@ background:#E0E0E0;
    background:rgba(255,255,255,0.88);
 backdrop-filter:blur(6px);
     max-width:700px;
-    margin:20px auto;
-margin:60px auto 20px;
+ margin:60px auto 20px;
+    padding:20px;
     border-radius:20px;
     box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
@@ -285,7 +285,6 @@ margin:60px auto 20px;
 
 .animal{
     border-radius:15px;
-  
 }
 @keyframes animalOpen{
 
@@ -386,9 +385,7 @@ opacity:1;
 }
 .animal-img{
 width:58px;
-height:58px;
-object-fit:contain;
-}
+height:58px;}
 .end-zoo{
 display:grid;
 grid-template-columns:repeat(5,1fr);
@@ -427,75 +424,141 @@ transform:translateY(0);
 
 }
 .guide-page{
-
 min-height:100vh;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 background-image:url("images/guide-bg.png");
+background-size:contain;
 
-background-size:cover;
+background-repeat:no-repeat;
 
 background-position:center;
-
 padding:20px;
-
 }
-
 
 .guide-scroll{
-
-width:45%;
-
-max-width:500px;
-
+width:58%;
+max-width:260px;
+margin:auto;
 text-align:center;
+font-size:18px;
+line-height:1.5;
+padding-top:150px;
+box-sizing:border-box;
+}
 
+.guide-scroll h1{
+font-size:26px;
+margin-bottom:15px;
+color:#ff6f00;
+}
+
+.guide-scroll p{
+font-size:14px;
+line-height:1.4;
+margin:6px 0;
+font-weight:bold;
+}
+.guide-scroll button{
+padding:12px 30px;
 font-size:20px;
-
-line-height:1.8;
-
-padding:40px 20px 20px;
-
+border:none;
+border-radius:15px;
+background:#4CAF50;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+.guide-page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background-image:url("images/guide-bg.png");
+background-size:130% auto;
+background-position:center;
+background-repeat:no-repeat;
+padding:20px;
 }
 
-
+.guide-scroll{
+width:320px;
+max-width:380px;
+text-align:center;
+padding:80px 55px 50px;
+box-sizing:border-box;
+margin:auto;
+}
 .guide-owl{
-
-width:120px;
-
-margin-bottom:10px;
-
+width:90px;
+display:block;
+margin:0 auto 20px;
 }
 
+.guide-scroll h1{
+font-size:34px;
+margin-bottom:20px;
+color:#8B4513;
+}
+
+.guide-scroll p{
+font-size:22px;
+line-height:2;
+margin:12px 0;
+font-weight:bold;
+color:#4a2d16;
+}
 
 .guide-scroll button{
-
+margin-top:25px;
 padding:12px 30px;
-
 font-size:20px;
-
 border:none;
-
 border-radius:15px;
-
 background:#4CAF50;
-
 color:white;
-
 cursor:pointer;
+}
 
+.guide-scroll{
+position:relative;
+z-index:1;
+}
+.guide-scroll{
+    width:320px;
+    text-align:center;
+padding:90px 55px 50px !important;
+    box-sizing:border-box;
+    margin:auto;
+}
+.guide-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.guide-image{
+    width:100%;
+    max-width:430px;
+    height:auto;
+    display:block;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.guide-page button{
+    margin-top:20px;
 }
 .animal{
     height:70px;
 }
 
 .animal img{
- max-height:38px;
+   max-height:38px;
 }
 
 .animals{
@@ -555,11 +618,21 @@ cursor:pointer;
 }
 
 .sound-buttons button{
-    width:50px;
-    height:50px;
-    padding:0;
+    width:45px;
+    height:45px;
+    background:#E3F2FD;
+    border:2px solid #90CAF9;
+    color:#1565C0;
     border-radius:50%;
-    font-size:24px;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+    padding:0;
+}
+
+.sound-buttons button:hover{
+    background:#BBDEFB;
+    transform:scale(1.08);
 }
 
 .animals-row{

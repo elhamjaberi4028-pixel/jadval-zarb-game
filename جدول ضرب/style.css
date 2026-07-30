@@ -654,3 +654,13 @@ padding:90px 55px 50px !important;
     color:#2E7D32;
     font-size:17px;
 }
+.sound-buttons button{
+    background:#E3F2FD !important;
+    border:2px solid #90CAF9 !important;
+    color:#1565C0 !important;
+    width:45px !important;
+    height:45px !important;
+    border-radius:50%;
+    padding:0;
+    font-size:22px;
+}

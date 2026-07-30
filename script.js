@@ -397,9 +397,13 @@ document.getElementById("app").innerHTML=`
 
 <div>📖 ${currentQuestion+1} / 20</div>
 
+<div>🎵 ${musicOn ? "روشن" : "خاموش"}</div>
+
 <button onclick="toggleMusic()">
 ${musicOn ? "🎵" : "<span style='text-decoration:line-through'>🎵</span>"}
 </button>
+
+<div>🔊 ${effectsOn ? "روشن" : "خاموش"}</div>
 
 <button onclick="toggleEffects()">
 ${effectsOn ? "🔊" : "<span style='text-decoration:line-through'>🔊</span>"}

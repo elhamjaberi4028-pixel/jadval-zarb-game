@@ -113,11 +113,18 @@ margin-bottom:10px;
 }
 
 .top button{
-width:42px;
-height:42px;
-padding:0;
-font-size:22px;
-border-radius:50%;
+    width:42px;
+    height:42px;
+    padding:0;
+    font-size:22px;
+    border-radius:50%;
+    background:#E3F2FD;
+    border:2px solid #90CAF9;
+    color:#1565C0;
+}
+
+.top button:hover{
+    background:#BBDEFB;
 }
 
 .question{

@@ -171,12 +171,29 @@ showQuestion();
 
 }
 function createQuestions(){
-questions=[];
-for(let i=0;i<20;i++){
-let a=Math.floor(Math.random()*8)+2;
-let b=Math.floor(Math.random()*8)+2;
-questions.push({a:a,b:b,answer:a*b});
-}
+
+    questions = [];
+
+    let allQuestions = [];
+
+    for(let a = 2; a <= 9; a++){
+
+        for(let b = a; b <= 9; b++){
+
+            allQuestions.push({
+                a: a,
+                b: b,
+                answer: a * b
+            });
+
+        }
+
+    }
+
+    allQuestions.sort(() => Math.random() - 0.5);
+
+    questions = allQuestions.slice(0,20);
+
 }
 
 function showQuestion(){

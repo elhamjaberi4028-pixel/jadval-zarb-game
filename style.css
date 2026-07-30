@@ -602,11 +602,21 @@ color:#4a2d16;
 }
 
 .sound-buttons button{
-    width:50px;
-    height:50px;
-    padding:0;
+    width:45px;
+    height:45px;
+    background:#E3F2FD;
+    border:2px solid #90CAF9;
+    color:#1565C0;
     border-radius:50%;
-    font-size:24px;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+    padding:0;
+}
+
+.sound-buttons button:hover{
+    background:#BBDEFB;
+    transform:scale(1.08);
 }
 
 .animals-row{

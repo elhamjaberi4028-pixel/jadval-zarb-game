@@ -522,23 +522,51 @@ window.open("certificate.html","_blank");
 }
 function toggleMusic(){
 
-musicOn = !musicOn;
+    musicOn = !musicOn;
 
-if(musicOn){
+    const musicBtn = document.getElementById("musicBtn");
 
-backgroundMusic.play();
+    if(musicOn){
 
-}else{
+        backgroundMusic.play().catch(function(error){
+            console.log("پخش موسیقی انجام نشد:", error);
+        });
 
-backgroundMusic.pause();
+        if(musicBtn){
+            musicBtn.innerHTML = "🎵";
+        }
 
-}
+    }else{
+
+        backgroundMusic.pause();
+
+        if(musicBtn){
+            musicBtn.innerHTML = "<span style='text-decoration:line-through'>🎵</span>";
+        }
+
+    }
 
 }
 
 
 function toggleEffects(){
 
-effectsOn = !effectsOn;
+    effectsOn = !effectsOn;
+
+    const effectsBtn = document.getElementById("effectsBtn");
+
+    if(effectsBtn){
+
+        if(effectsOn){
+
+            effectsBtn.innerHTML = "🔊";
+
+        }else{
+
+            effectsBtn.innerHTML = "<span style='text-decoration:line-through'>🔊</span>";
+
+        }
+
+    }
 
 }

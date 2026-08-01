@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 
 <head>
@@ -8,11 +9,11 @@
 <style>
 
 body{
-margin:0;
-padding:20px;
-background:white;
-text-align:center;
-font-family:tahoma;
+    margin:0;
+    padding:20px;
+    background:white;
+    text-align:center;
+    font-family:tahoma;
 }
 
 canvas{
@@ -23,15 +24,20 @@ canvas{
 }
 
 .download-btn{
-margin-top:20px;
-padding:12px 30px;
-font-size:22px;
-background:#4CAF50;
-color:white;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-family:tahoma;
+    margin-top:20px;
+    padding:12px 30px;
+    font-size:22px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-family:tahoma;
+}
+
+.download-btn:disabled{
+    background:#999;
+    cursor:not-allowed;
 }
 
 </style>
@@ -40,91 +46,117 @@ font-family:tahoma;
 
 <body>
 
-
-<canvas id="certificateCanvas"
-width="794"
-height="1123">
-</canvas>
-
+<canvas id="certificateCanvas" width="794" height="1123"></canvas>
 
 <br>
 
-<button class="download-btn" onclick="downloadCertificate()">
-📥 دانلود لوح تقدیر
-</button>
-
-
+<button
+ id="downloadBtn"
+ class="download-btn"
+ onclick="downloadCertificate()"
+ disabled>
+⏳ آماده‌سازی لوح... </button>
 
 <script>
 
 let name = localStorage.getItem("certificate_name") || "دانش‌آموز";
 
-
 let canvas = document.getElementById("certificateCanvas");
 let ctx = canvas.getContext("2d");
 
+let downloadBtn = document.getElementById("downloadBtn");
 
 let img = new Image();
 
-img.src="images/certificate-new.png";
+img.src = "images/certificate-new.png";
 
 
-img.onload=function(){
+img.onload = function(){
 
+    // پاک کردن کامل Canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // قرار دادن تصویر لوح
-    ctx.drawImage(img,0,0,794,1123);
-
-
+    // قرار دادن تصویر کامل لوح
+    ctx.drawImage(img, 0, 0, 794, 1123);
 
     // تنظیم متن فارسی
-    ctx.direction="rtl";
-    ctx.textAlign="center";
-    ctx.font="900 52px Tahoma";
-
+    ctx.direction = "rtl";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
+    ctx.font = "900 52px Tahoma";
 
     // سایه متن
-    ctx.shadowColor="rgba(0,0,0,0.25)";
-    ctx.shadowBlur=4;
-    ctx.shadowOffsetX=2;
-    ctx.shadowOffsetY=2;
+    ctx.shadowColor = "rgba(0,0,0,0.25)";
+    ctx.shadowBlur = 4;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
 
-
-    ctx.fillStyle="#0D47A1";
-
+    // رنگ نام
+    ctx.fillStyle = "#0D47A1";
 
     // نوشتن نام
-ctx.fillText(name,397,445);
+    ctx.fillText(name, 397, 445);
+
+    // حذف سایه
+    ctx.shadowColor = "transparent";
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+
+    // فعال کردن دکمه فقط بعد از آماده شدن کامل تصویر
+    downloadBtn.disabled = false;
+    downloadBtn.innerHTML = "📥 دانلود لوح تقدیر";
+};
 
 
-    // حذف سایه برای ادامه
-    ctx.shadowColor="transparent";
+img.onerror = function(){
 
+    downloadBtn.disabled = true;
+    downloadBtn.innerHTML = "❌ تصویر لوح پیدا نشد";
 
 };
 
 
-
 function downloadCertificate(){
 
+    // اطمینان از اینکه تصویر آماده است
+    if(!img.complete || img.naturalWidth === 0){
+        alert("لطفاً چند لحظه صبر کنید تا لوح آماده شود.");
+        return;
+    }
 
-let link=document.createElement("a");
+    // تبدیل Canvas به تصویر PNG
+    canvas.toBlob(function(blob){
 
+        if(!blob){
+            alert("ذخیره تصویر انجام نشد.");
+            return;
+        }
 
-link.download="لوح-تقدیر-"+name+".png";
+        let url = URL.createObjectURL(blob);
 
+        let link = document.createElement("a");
 
-link.href=canvas.toDataURL("image/png");
+        link.download = "لوح-تقدیر-" + name + ".png";
 
+        link.href = url;
 
-link.click();
+        document.body.appendChild(link);
 
+        link.click();
+
+        document.body.removeChild(link);
+
+        // آزاد کردن حافظه
+        setTimeout(function(){
+            URL.revokeObjectURL(url);
+        }, 1000);
+
+    }, "image/png");
 
 }
 
-
 </script>
-
 
 </body>
 </html>

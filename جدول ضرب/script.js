@@ -282,11 +282,7 @@ document.getElementById("app").innerHTML=`
 
 
 ${medal ? `
-<img src="${medal}" style="
-width:140px;
-margin:20px;
-animation:bounce 1s infinite;
-">
+<img src="${medal}" class="result-medal">
 ` : ""}
 
 

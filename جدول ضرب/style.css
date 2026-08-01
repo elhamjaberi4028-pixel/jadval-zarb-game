@@ -467,12 +467,60 @@ button:hover{
         font-size:20px;
     }
 
-   .result{
-    width:calc(100% - 20px);
-    margin:10px auto 30px;
-    padding:15px 15px 120px;
+ .result{
+    width:calc(100% - 12px);
+    margin:6px auto;
+    padding:10px 10px 15px;
     min-height:auto;
     box-sizing:border-box;
+    border-radius:20px;
+}
+
+.result h1{
+    font-size:24px;
+    margin:3px 0;
+}
+
+.result h2{
+    font-size:18px;
+    margin:4px 0;
+}
+
+.result h2[style]{
+    font-size:22px !important;
+}
+
+.result-message{
+    font-size:16px !important;
+    line-height:1.5;
+    margin:8px !important;
+}
+
+.result-medal{
+    width:95px;
+    max-width:25vw;
+    margin:8px auto;
+    display:block;
+    animation:bounce 1s infinite;
+}
+
+.end-zoo{
+    gap:4px;
+    margin:8px auto;
+}
+
+.end-animal{
+    width:35px;
+    height:35px;
+    padding:3px;
+}
+
+.result button{
+    width:90%;
+    max-width:280px;
+    margin:4px auto;
+    padding:7px 10px;
+    font-size:17px;
 }
     .result h1{
         font-size:30px;

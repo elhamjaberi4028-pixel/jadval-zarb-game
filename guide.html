@@ -6,19 +6,83 @@
 <title>راهنمای بازی</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+    body {
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .guide-page {
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .guide-image {
+        display: block;
+        max-width: 100%;
+        max-height: calc(100vh - 75px);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .guide-page button {
+        flex-shrink: 0;
+        padding: 10px 28px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 5px;
+        }
+
+        .guide-page {
+            gap: 8px;
+        }
+
+        .guide-image {
+            max-width: 100%;
+            max-height: calc(100vh - 65px);
+        }
+
+        .guide-page button {
+            padding: 8px 24px;
+            font-size: 17px;
+        }
+    }
+</style>
+
 </head>
 
 <body>
 
 <div class="guide-page">
 
-    <img src="images/guide-page.png" class="guide-image" alt="راهنمای بازی جدول ضرب">
+    <img src="images/guide-page.png"
+         class="guide-image"
+         alt="راهنمای بازی جدول ضرب">
 
-    <br><br>
-
-   <button onclick="history.back()">
-بازگشت
-</button>
+    <button onclick="history.back()">
+        بازگشت
+    </button>
 
 </div>
 

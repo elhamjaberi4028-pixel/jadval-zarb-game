@@ -501,6 +501,7 @@ ${zoo}
 </div>
 
 
+
 <div class="question" style="direction:ltr; unicode-bidi:bidi-override;">
 
 <span>${q.a.toLocaleString("fa-IR")} × ${q.b.toLocaleString("fa-IR")}</span>
@@ -534,13 +535,13 @@ let buttons=document.querySelectorAll(".answers button");
 buttons.forEach(btn=>{
 btn.disabled=true;
 
-if(Number(btn.innerText)==questions[currentQuestion].answer){
+if(Number(btn.innerText.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)))==questions[currentQuestion].answer){
 btn.style.background="#4CAF50";
 }
 
 });
 
-let clicked=[...buttons].find(b=>Number(b.innerText)==answer);
+let clicked=[...buttons].find(b=>Number(b.innerText.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)))==answer);
 
 if(answer==questions[currentQuestion].answer){
 

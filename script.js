@@ -266,50 +266,130 @@ message="🥉 خوب بود! مدال برنز را گرفتی.";
 
 document.getElementById("app").innerHTML=`
 
-<div class="result">
+<div class="result" style="
+    width:100%;
+    height:100vh;
+    box-sizing:border-box;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:12px 10px 8px;
+">
 
-<h1 style="color:#ff9800;">
+
+<h1 style="
+    color:#ff9800;
+    font-size:32px;
+    margin:0 0 5px;
+">
 🎉 پایان بازی 🎉
 </h1>
 
-<h2>
+
+<h2 style="
+    font-size:25px;
+    margin:3px 0;
+">
 👦 ${playerName}
 </h2>
 
-<h2 style="font-size:36px;color:#4CAF50;">
+
+<h2 style="
+    font-size:27px;
+    color:#4CAF50;
+    margin:3px 0 8px;
+">
 ⭐ امتیاز ${score} از 20
 </h2>
 
 
 ${medal ? `
-<img src="${medal}" class="result-medal">
+<img
+    src="${medal}"
+    class="result-medal"
+    style="
+        width:auto;
+        height:auto;
+        max-width:130px;
+        max-height:130px;
+        object-fit:contain;
+        margin:2px 0 8px;
+    "
+>
 ` : ""}
 
 
-<p style="font-size:28px;margin:20px;">
+<p style="
+    font-size:21px;
+    line-height:1.7;
+    margin:3px 10px 8px;
+    text-align:center;
+    max-width:500px;
+">
 ${message}
 </p>
 
 
-<div class="end-zoo">
+<div class="end-zoo" style="
+    width:100%;
+    max-width:470px;
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+    justify-items:center;
+    align-items:center;
+    margin:3px auto 8px;
+">
+
 
 ${animals.map(animal=>`
-<img src="images/${animal}" class="end-animal">
+<img
+    src="images/${animal}"
+    class="end-animal"
+    style="
+        width:100%;
+        max-width:58px;
+        height:auto;
+        max-height:58px;
+        object-fit:contain;
+    "
+>
 `).join("")}
+
 
 </div>
 
 
 ${hasCertificate ? `
 
-<button onclick="saveCertificate()">
+<button onclick="saveCertificate()" style="
+    width:min(90%,420px);
+    min-height:42px;
+    padding:7px 15px;
+    margin:3px 0;
+    font-size:17px;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+">
 🏆 ذخیره لوح تقدیر
 </button>
 
 ` : ""}
 
 
-<button onclick="location.reload()">
+<button onclick="location.reload()" style="
+    width:min(90%,420px);
+    min-height:45px;
+    padding:7px 15px;
+    margin:3px 0;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+">
 🔄 بازی دوباره
 </button>
 
@@ -317,7 +397,6 @@ ${hasCertificate ? `
 </div>
 
 `;
-
 
 if(effectsOn){
 

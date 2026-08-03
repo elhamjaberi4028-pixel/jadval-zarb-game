@@ -504,9 +504,11 @@ ${zoo}
 
 <div class="question">
 
-<span dir="ltr" style="unicode-bidi:isolate;">?</span>
-<span dir="ltr" style="unicode-bidi:isolate;"> = </span>
-<span>${q.a.toLocaleString("fa-IR")} × ${q.b.toLocaleString("fa-IR")}</span>
+<span style="display:inline-block; direction:ltr;">?</span>
+<span style="display:inline-block; direction:ltr;">=</span>
+<span style="display:inline-block; direction:ltr;">
+${q.a.toLocaleString("fa-IR")} × ${q.b.toLocaleString("fa-IR")}
+</span>
 
 </div>
 

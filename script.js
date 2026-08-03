@@ -513,7 +513,7 @@ ${options.map(x=>`
 
 <button onclick="checkAnswer(${x})">
 
-${x.toLocaleString("fa-IR")}
+${String(x).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])}
 
 </button>
 

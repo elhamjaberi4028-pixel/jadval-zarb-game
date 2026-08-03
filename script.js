@@ -398,6 +398,7 @@ ${hasCertificate ? `
 
 `;
 
+
 if(effectsOn){
 
 winSound.currentTime = 0;
@@ -479,9 +480,7 @@ ${musicOn ? "🎵" : "<span style='text-decoration:line-through'>🎵</span>"}
 <button id="effectsBtn" onclick="toggleEffects()">
 ${effectsOn ? "🔊" : "<span style='text-decoration:line-through'>🔊</span>"}
 </button>
-
 </div>
-
 
 <div class="progress">
 

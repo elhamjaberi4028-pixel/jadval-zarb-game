@@ -508,11 +508,12 @@ ${zoo}
 <span> = ?</span>
 
 </div>
+
 <div class="answers">
 
 ${options.map(x=>`
 
-<button onclick="checkAnswer(${x})">
+<button onclick="checkAnswer(${x})" data-answer="${x}">
 
 ${String(x).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])}
 
@@ -533,15 +534,20 @@ function checkAnswer(answer){
 let buttons=document.querySelectorAll(".answers button");
 
 buttons.forEach(btn=>{
+
 btn.disabled=true;
 
-if(Number(btn.innerText.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)))==questions[currentQuestion].answer){
+if(Number(btn.dataset.answer)==questions[currentQuestion].answer){
+
 btn.style.background="#4CAF50";
+
 }
 
 });
 
-let clicked=[...buttons].find(b=>Number(b.innerText.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)))==answer);
+let clicked=[...buttons].find(
+b=>Number(b.dataset.answer)==answer
+);
 
 if(answer==questions[currentQuestion].answer){
 
@@ -555,26 +561,36 @@ let words=[
 "قهرمان! 🏆"
 ];
 
-showMessage(words[Math.floor(Math.random()*words.length)],"correct");
+showMessage(
+words[Math.floor(Math.random()*words.length)],
+"correct"
+);
 
+if(clicked){
 clicked.style.background="#4CAF50";
+}
 
 if(effectsOn){
 
-applauseSound.currentTime = 0;
+applauseSound.currentTime=0;
 applauseSound.play();
 
 }
 
 }else{
 
+if(clicked){
 clicked.style.background="#F44336";
+}
 
-showMessage("اشتباه بود! دوباره تلاش کن ❌","wrong");
+showMessage(
+"اشتباه بود! دوباره تلاش کن ❌",
+"wrong"
+);
 
 if(effectsOn){
 
-wrongSound.currentTime = 0;
+wrongSound.currentTime=0;
 wrongSound.play();
 
 }
@@ -590,7 +606,6 @@ showQuestion();
 },800);
 
 }
-
 function saveCertificate(){
 
 window.open("certificate.html","_blank");

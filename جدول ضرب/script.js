@@ -502,9 +502,9 @@ ${zoo}
 
 
 
-<div class="question">
+<div class="question" dir="rtl">
 
-${q.a} × ${q.b} = ؟
+${q.a.toLocaleString("fa-IR")} × ${q.b.toLocaleString("fa-IR")} = ?
 
 </div>
 

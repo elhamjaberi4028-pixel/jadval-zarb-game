@@ -507,6 +507,7 @@ ${zoo}
 ? = ${q.a.toLocaleString("fa-IR")} × ${q.b.toLocaleString("fa-IR")}
 
 </div>
+
 <div class="answers">
 
 ${options.map(x=>`

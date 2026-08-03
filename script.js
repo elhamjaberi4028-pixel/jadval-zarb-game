@@ -503,10 +503,10 @@ ${zoo}
 
 <div class="question" style="direction:ltr; unicode-bidi:bidi-override;">
 
-? = ${q.a.toLocaleString("fa-IR")} × ${q.b.toLocaleString("fa-IR")}
+<span>${q.a.toLocaleString("fa-IR")} × ${q.b.toLocaleString("fa-IR")}</span>
+<span> = ?</span>
 
 </div>
-
 <div class="answers">
 
 ${options.map(x=>`

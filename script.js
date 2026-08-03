@@ -513,7 +513,7 @@ ${options.map(x=>`
 
 <button onclick="checkAnswer(${x})">
 
-${x}
+${x.toLocaleString("fa-IR")}
 
 </button>
 
